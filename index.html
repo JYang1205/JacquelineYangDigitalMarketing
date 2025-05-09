@@ -67,11 +67,41 @@
       color: #aaa;
       text-align: center;
     }
+
+    .image-container {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .image-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+      text-align: center;
+      padding: 1rem;
+    }
+    
   </style>
 </head>
 <body>
 
   <header>
+    <div class="image-container">
+    <img src="jacYangHeadshot.jpg" alt="test Image">
+    </div>
     <h1>Jacqueline Yang</h1>
     <p>I'm a digital marketer with skills in SEO ranging from social media to website design.</p>
   </header>
