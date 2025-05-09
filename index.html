@@ -3,33 +3,84 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jacqueline Yang - Digital Marketer</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Scroll Image Transition</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: sans-serif;
+      background: #111;
+      color: white;
+    }
+
+    .section {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .image-container {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+
+    .image-container.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    img {
+      max-width: 90%;
+      max-height: 80vh;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Jacqueline Yang</h1>
-    <p>Digital Marketer | SEO Specialist | Content Strategist</p>
-  </header>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I’m a digital marketing specialist with experience in SEO, content, and analytics. I help brands grow their online presence through data-driven strategies.</p>
-  </section>
+  <div class="section">
+    <div class="image-container">
+      <img src="https://source.unsplash.com/random/1600x900?nature" alt="Nature 1"/>
+    </div>
+  </div>
 
-  <section id="projects">
-    <h2>Featured Projects</h2>
-    <ul>
-      <li><strong>Translations for Japanese Content Creators</strong> – <a href="https://twitter.com/JayOKProd">JayOKProd</a></li>    </ul>
-  </section>
+  <div class="section">
+    <div class="image-container">
+      <img src="https://source.unsplash.com/random/1600x900?mountains" alt="Nature 2"/>
+    </div>
+  </div>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/jackie-y-472547233/">Jacqueline Yang's LinkedIn</a></p>
-  </section>
+  <div class="section">
+    <div class="image-container">
+      <img src="https://source.unsplash.com/random/1600x900?water" alt="Nature 3"/>
+    </div>
+  </div>
 
-  <footer>
-    <p>&copy; 2025 Jacqueline Yang</p>
-  </footer>
+  <script>
+    const observers = document.querySelectorAll('.image-container');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.3,
+    });
+
+    observers.forEach(container => {
+      observer.observe(container);
+    });
+  </script>
 </body>
 </html>
