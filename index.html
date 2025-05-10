@@ -1,52 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
   <title>Jacqueline Yang - Digital Marketer</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
-    <div class="image-container">
-    <img src="intro image.jpg" alt="Jacqueline Yang looking to the side while against a wall">
-    <h1>Jacqueline Yang</h1>
-    <p>I'm a digital marketer with skills in SEO ranging from social media to website design.</p>
-    </div>
-  </header>
+  <section class="hero visible">
+    Jacqueline Yang
+  </section>
+
+  <section class="prompt">
+    <img src="arrowsDown.png" alt="Arrows pointing down">
+  </section>
 
   <section class="project">
+    <h2>Digital Marketer</h2>
     <img src="jacYangHeadshot.jpg" alt="Jacqueline Yang Headshot Photo">
-    <h2>Learn more about me below</h2>
+    <p>With an interest in Japanese culture, I have developped a career in digital marketing in hopes to bridge the innovation found between Japan and the rest of the world.</p>
+    <p>Learn about me below!</p>
   </section>
 
   <section class="project">
-    <img src="20240127_034555.jpg" alt="Project 2">
-    <h2>Project Two</h2>
-    <p>test</p>
+    <h2>Translating in My Free Time</h2>
+    <img src="JayOKYT.jpg" alt="Image showing translated videos on youtube">
+    <p>Since graduating in 2020, I have made various videos that translate Japanese content to English, and have helped foster online communities for such creators.</p>
+    <p>Youtube: <a href="https://www.youtube.com/@JayOKProd" target="_blank" aria-label=", Opens in a new tab." rel="noopener"><u>@JayOKProd</u></a></p>
+    <p>Twitter/X: <a href="https://twitter.com/JayOKProd" target="_blank" aria-label=", Opens in a new tab." rel="noopener"><u>@JayOKProd</u></a></p>
   </section>
 
   <section class="project">
-    <img src="20231228_213549.jpg" alt="Project 3">
-    <h2>Project Three</h2>
-    <p>test</p>
+    <h2>Professional Work</h2>
+    <img src="wieckLogo.jpg" style="width: 500px;" alt="Company logos of Wieck Media">
+    <img src="ypartnersLogo.jpg" style="width: 500px;"" alt="Company logo of Ys and Partners">
+    <p>I have been able to refine my skills with digital marketing by working at digital marketing companies like Ys and Partners, and Wieck Media.</p>
+    <p>As such, I have experience in email marketing, social media management, and website SEO for many industries.</p>
   </section>
+
+
+  <div class="contact">
+    <h2>Contact</h2>
+    <p>Feel free to connect with me on <a href="https://www.linkedin.com/in/jackie-y-472547233/" target="_blank" aria-label=", Opens in a new tab." rel="noopener"><u>LinkedIn</u></a></p>
+  </div>
 
   <script>
-    const projects = document.querySelectorAll('.project');
+    const sections = document.querySelectorAll("section");
 
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+    function revealOnScroll() {
+      const triggerBottom = window.innerHeight * 0.85;
+
+      sections.forEach((section, index) => {
+        const boxTop = section.getBoundingClientRect().top;
+
+        if (boxTop < triggerBottom) {
+          section.classList.add('visible');
         }
       });
-    }, {
-      threshold: 0.3,
-    });
+    }
 
-    projects.forEach(project => observer.observe(project));
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
   </script>
 
 </body>
