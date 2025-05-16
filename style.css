@@ -76,9 +76,9 @@ section.visible {
 }
 
 .project img {
-  min-width: auto;
+  min-width: 50px;
   min-height: 50px;
-  max-width: auto;
+  max-width: 1080px;
   max-height: 1080px;
   border-radius: 12px;
   margin: 1rem;
