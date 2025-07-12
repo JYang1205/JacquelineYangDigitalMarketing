@@ -1,7 +1,7 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -36,6 +36,8 @@ section.visible {
   opacity: 0;
   transform: translateY(10px);
   transition: opacity 1s ease-in, transform 1s ease-in;
+  text-align: center;
+  padding: 20px;
 }
 
 .prompt {
@@ -48,6 +50,7 @@ section.visible {
   opacity: 1;
   transform: translateY(-100px);
   transition: transform 1s ease-in-out;
+  display: flex;
 }
 
 .prompt img {
@@ -59,7 +62,7 @@ section.visible {
 }
 
 .project {
-  height: 100vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -76,29 +79,30 @@ section.visible {
 }
 
 .project img {
-  min-width: 50px;
-  min-height: 50px;
-  max-width: 1080px;
-  max-height: 1080px;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
   border-radius: 12px;
   margin: 1rem;
   box-shadow: 0 8px 50px rgba(0, 0, 0, 0.4);
 }
 
+.company-logo {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}
+
 .project h2 {
   margin-bottom: 10px;
-  color: rgb(16, 17, 23);
-  text-shadow: 0 0 10px #ffffff;
-}
-
-.project p {
-  max-width: 600px;
-  color: #cfcfcf;
+  color: rgb(0, 0, 0);
   text-align: center;
-  text-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 0 10px #c3c3c3;
 }
 
-.project ul li {
+.project p,
+.project ul li,
+.project a {
   max-width: 600px;
   color: #cfcfcf;
   text-align: center;
@@ -106,10 +110,7 @@ section.visible {
 }
 
 .project a {
-  max-width: 600px;
   color: #6d6d6d;
-  text-align: center;
-  text-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
 }
 
 .contact {
@@ -120,13 +121,13 @@ section.visible {
   justify-content: center;
   align-items: center;
   background-color: rgb(38, 38, 38);
+  padding: 20px;
+  text-align: center;
 }
 
-.contact h2 {
-  color: #ffffff;
-}
-
-.contact p {
+.contact h2,
+.contact p,
+.contact a {
   color: #ffffff;
 }
 
@@ -135,15 +136,13 @@ section.visible {
 }
 
 .container {
-    position : relative;
+  position: relative;
 }
 
 .projectContainer {
-    position : relative;
-    padding-bottom: 5%;
+  position: relative;
+  padding-bottom: 5%;
 }
-
-
 
 #backToTop {
   position: fixed;
@@ -158,11 +157,41 @@ section.visible {
   border-radius: 8px;
   cursor: pointer;
   z-index: 1000;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 #backToTop:hover {
   background-color: #555;
 }
 
+/* Responsive media query for screens smaller than 768px */
+@media screen and (max-width: 768px) {
+  .hero {
+    font-size: 1.5rem;
+    height: 70vh;
+  }
+
+  .project {
+    padding: 5%;
+  }
+
+  .project img,
+  .company-logo {
+    max-width: 90%;
+  }
+
+  .project h2,
+  .project p,
+  .project ul li,
+  .project a,
+  .contact h2,
+  .contact p {
+    font-size: 0.95rem;
+    padding: 0 10px;
+  }
+
+  #backToTop {
+    padding: 10px 14px;
+    font-size: 16px;
+  }
+}
