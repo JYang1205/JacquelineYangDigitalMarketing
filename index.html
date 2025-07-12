@@ -2,10 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jacqueline Yang - Digital Marketer</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <div>
+  <button id="backToTop" title="Back to top">↑</button>
+  </div>
 
   <section class="hero visible">
     Jacqueline Yang
@@ -38,7 +43,7 @@
   <section class="project">
     <h2>Professional Work</h2>
     <img src="wieckLogo.webp" style="width: 500px;" alt="Company logos of Wieck Media">
-    <img src="ypartnersLogo.webp" style="width: 500px;"" alt="Company logo of Ys and Partners">
+    <img src="ypartnersLogo.webp" style="width: 500px;" alt="Company logo of Ys and Partners">
     <p>I have been able to refine my skills with digital marketing by working at digital marketing companies like Ys and Partners, and Wieck Media.</p>
     <p>As such, I have experience in email marketing, social media management, and website SEO for many industries.</p>
     <ul>
@@ -55,24 +60,9 @@
   </div>
   </div>
 
-  <script>
-    const sections = document.querySelectorAll("section");
 
-    function revealOnScroll() {
-      const triggerBottom = window.innerHeight * 0.85;
-
-      sections.forEach((section, index) => {
-        const boxTop = section.getBoundingClientRect().top;
-
-        if (boxTop < triggerBottom) {
-          section.classList.add('visible');
-        }
-      });
-    }
-
-    window.addEventListener('scroll', revealOnScroll);
-    window.addEventListener('load', revealOnScroll);
-  </script>
+  <script src="script.js"></script>
+  
 
 </body>
 </html>
